@@ -1,0 +1,17 @@
+.criminalsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    
+    
+}
+
+
+.criminal--card {
+    
+    border: 1px solid black;
+    height: 200px;
+    margin: 20px 0px 0px 60px;
+    text-align: center;
+    width: 200px;
+}
