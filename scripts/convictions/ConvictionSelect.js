@@ -29,4 +29,35 @@ const ConvictionSelect = () => {
     render(convictionsArray)
 }
 
+
+
+/*
+    Which element in your HTML contains all components?
+    That's your Event Hub. Get a reference to it here.
+*/
+const eventHub = document.querySelector(".container")
+
+
+// On the content target, listen for a "change" event.
+contentTarget.addEventListener("change", changeEvent => {
+
+    // Only do this if the `crimeSelect` element was changed
+    if (changeEvent.target.id === "crimeSelect") {
+        // Create custom event. Provide an appropriate name.
+        const theCrimeThatWasChosen = changeEvent.target.value
+
+        const crimeChosenEvent = new CustomEvent("crimeChosen", {
+            detail: {
+                chosenCrime: theCrimeThatWasChosen
+       
+    }
+})
+ // Dispatch to event hub
+ eventHub.dispatchEvent(crimeChosenEvent)
+}
+})
+
+
+
+
 export default ConvictionSelect
