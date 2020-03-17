@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "noteText": "new suspect in a hit and run case",
+      "criminal": "Jace Bryant",
+      "timestamp": 1584472514668
+    },
+    {
+      "noteText": "His twin brother, Mogelio, actually committed the crime.",
+      "criminal": "Rogelio Hills",
+      "timestamp": 1584472514668,
+      "id": 2
+    }
+  ]
+}

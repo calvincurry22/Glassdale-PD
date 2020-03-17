@@ -20,7 +20,7 @@ const ConvictionSelect = () => {
         contentTarget.innerHTML = `
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
-            ${convictionsArray.map(crime => {
+            ${convictionsCollection.map(crime => {
             return `<option>${crime.name}</option>`})
         }
             </select>`

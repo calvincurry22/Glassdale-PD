@@ -1,21 +1,39 @@
-.criminalsContainer {
+@import "./criminals.css";
+@import "./filter.css";
+@import "./notes.css";
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+.container {
     display: flex;
-    flex-wrap: wrap;
-    margin-left: 5%;
-    
-    
+    flex-direction: column;
+    font-size: 1.25rem;
+}
+
+.listsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 
-.criminal--card {
-    background-color: whitesmoke;
-    border: 2px solid black;
-    height: 200px;
-    margin: 20px 0px 0px 60px;
-    text-align: center;
-    width: 200px;
-}
 
-body {
-    background-color: grey;
-}
+
+

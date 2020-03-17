@@ -1,6 +1,8 @@
 import { useCriminals } from './CriminalDataProvider.js'
 import { getCriminals } from './CriminalDataProvider.js'
 import Criminal from './Criminal.js'
+import { useOfficers } from '../officers/OfficerProvider.js'
+
 
 
 /* In our function, we want the following actions to occur: 
@@ -38,7 +40,30 @@ eventHub.addEventListener("crimeChosen", event => {
 })
 
 
- const CriminalList = () => {
+
+eventHub.addEventListener("officerChosen", event => {
+
+    const officers = useOfficers()
+    const criminals = useCriminals()
+
+    const arrestingOfficers = criminals.filter(criminalObject => {
+    if(event.detail.chosenOfficer === criminalObject.arrestingOfficer) {
+            return true
+    }
+    else return false
+})
+  contentTarget.innerHTML = ""
+
+  for (const singleOfficer of arrestingOfficers) {
+      contentTarget.innerHTML += Criminal(singleOfficer)
+  }
+
+
+
+})
+
+
+  export const CriminalList = () => {
   const criminals = useCriminals()
 
   for (const singleCriminal of criminals) {
@@ -46,4 +71,7 @@ eventHub.addEventListener("crimeChosen", event => {
   }
 }
 
-export default CriminalList 
+
+
+
+
