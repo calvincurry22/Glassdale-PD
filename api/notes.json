@@ -11,6 +11,12 @@
       "criminal": "Rogelio Hills",
       "timestamp": 1584472514668,
       "id": 2
+    },
+    {
+      "noteText": "test",
+      "criminal": "test",
+      "timestamp": 1584561635572,
+      "id": 3
     }
   ]
 }
