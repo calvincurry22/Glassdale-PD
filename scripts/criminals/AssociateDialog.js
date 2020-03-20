@@ -9,31 +9,34 @@ eventHub.addEventListener("knownAssociatesClicked", event =>
         const criminals = useCriminals()
 
         const associateButtonID = event.detail.chosenCriminal
-
-        criminals.find( 
+        
+        let oneCriminal= criminals.find( 
             criminalObject => {
 
                 if(parseInt(associateButtonID) === criminalObject.id) {
+                    
                 return true
                 }
             return false
             }
         )
-                KnownAssociatesDialog(criminals)
-
+                
+                KnownAssociatesDialog(oneCriminal)
+                
                 const dialogBox = document.querySelector("#associateDialog")
                 dialogBox.showModal()
     })
 
 
 export const KnownAssociatesDialog = (criminalObject) => {
+    
     contentTarget.innerHTML = `
         <dialog id="associateDialog">
             ${
                 criminalObject.known_associates.map(
                     (currentAssociate) => {
-                        return `<p>${currentAssociate.name}</p>
-                                <p>${currentAssociate.alibi}</p>
+                        return `<p class="alibiName">Name: ${currentAssociate.name}</p>
+                                <p class="alibiInfo">Alibi: ${currentAssociate.alibi}</p>
                                 `
                     }
                 ).join("")
