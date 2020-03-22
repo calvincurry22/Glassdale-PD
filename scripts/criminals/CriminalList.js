@@ -63,6 +63,24 @@ eventHub.addEventListener("officerChosen", event => {
 })
 
 
+
+contentTarget.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("associates--")) {
+        
+        const [prefix, criminalId] = clickEvent.target.id.split("--")
+    
+
+        const showAssociatesEvent = new CustomEvent("knownAssociatesClicked", {
+            detail: {
+                chosenCriminal : criminalId
+            }
+        })
+
+            eventHub.dispatchEvent(showAssociatesEvent)
+    }
+    
+})
+
   export const CriminalList = () => {
   const criminals = useCriminals()
 
