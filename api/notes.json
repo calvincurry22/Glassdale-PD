@@ -1,12 +1,32 @@
 {
   "notes": [
-  
     {
       "noteText": "His twin brother, Mogelio, actually committed the crime.",
       "criminal": "Rogelio Hills",
       "timestamp": 1584472514668,
       "id": 1,
       "criminalId": 2
+    },
+    {
+      "noteText": "\"Started grand theft crimes after playing grand theft auto on ps4\"",
+      "criminal": "Madelyn Lebsack",
+      "timestamp": 1584995174072,
+      "criminalId": 1,
+      "id": 2
+    },
+    {
+      "noteText": "Bribed Madelyn Lebsack to commit grand theft auto",
+      "criminal": "Adrienne Howell",
+      "timestamp": 1584996384960,
+      "criminalId": 6,
+      "id": 3
+    },
+    {
+      "noteText": "\"test note\"",
+      "criminal": "Taurean Bins",
+      "timestamp": 1584999056407,
+      "criminalId": 7,
+      "id": 4
     }
   ]
 }

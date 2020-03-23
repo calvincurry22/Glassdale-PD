@@ -1,6 +1,8 @@
 import { getNotes, useNotes } from "./NoteDataProvider.js"
 import { Note } from "./Note.js"
-import { useCriminals } from "../criminals/CriminalDataProvider.js"
+import { useCriminals, getCriminals } from "../criminals/CriminalDataProvider.js"
+
+
 
 
 const contentTarget = document.querySelector(".notesContainer")
@@ -26,7 +28,7 @@ const createNote = (noteCollection, criminalCollection) => {
                 ${note.noteText}
             </section>
         `
-    })
+    }).join("")
 }
 
 
@@ -34,6 +36,7 @@ export const NoteList = () => {
     
     const notesArray = useNotes()
     const criminals = useCriminals()
+    
 
     createNote(notesArray, criminals)
 }

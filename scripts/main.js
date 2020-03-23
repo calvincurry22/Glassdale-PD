@@ -15,11 +15,11 @@ import { getNotes } from "./notes/NoteDataProvider.js"
 
 
 getOfficers().then(OfficerSelect)
-getCriminals().then(CriminalList)
+getCriminals().then(CriminalList).then(NoteForm)
 
 // first get all convictions, THEN create the conviction dropdown
 getConvictions().then(ConvictionSelect)
 
 DisplayNotesButton()
 DisplayNoteFormButton()
-NoteForm()
+
