@@ -35,3 +35,5 @@ export const saveNote = note => {
     .then(getNotes)
     .then(dispatchStateChangeEvent)
 }
+
+
