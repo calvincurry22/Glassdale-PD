@@ -1,25 +1,40 @@
 import { getNotes, useNotes } from "./NoteDataProvider.js"
 import { Note } from "./Note.js"
+import { useCriminals } from "../criminals/CriminalDataProvider.js"
+
 
 const contentTarget = document.querySelector(".notesContainer")
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("noteStateChanged", customEvent => {
-    render()
-})
+// eventHub.addEventListener("noteStateChanged", customEvent => {
+//     NoteList()
+// })
 
 eventHub.addEventListener("allNotesClicked", customEvent => {
-    render()
+    getNotes().then(NoteList)
 })
 
-const render = () => {
-    getNotes().then(() => {
-        const allTheNotes = useNotes()
 
-        contentTarget.innerHTML = allTheNotes.map(
-            currentNoteObject => {
-                return Note(currentNoteObject)
-            }
-        ).join("")
+const createNote = (noteCollection, criminalCollection) => {
+    contentTarget.innerHTML = noteCollection.map(note => {
+        // Find the related criminal
+        const relatedCriminal = criminalCollection.find(criminal => criminal.id === note.criminalId)
+
+        return `
+            <section class="note">
+                <h2>Note about ${relatedCriminal.name}</h2>
+                ${note.noteText}
+            </section>
+        `
     })
 }
+
+
+export const NoteList = () => {
+    
+    const notesArray = useNotes()
+    const criminals = useCriminals()
+
+    createNote(notesArray, criminals)
+}
+

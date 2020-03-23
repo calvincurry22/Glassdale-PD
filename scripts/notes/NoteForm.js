@@ -1,4 +1,6 @@
 import { saveNote } from "./NoteDataProvider.js"
+import { useCriminals } from "../criminals/CriminalDataProvider.js"
+
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
@@ -22,7 +24,9 @@ contentTarget.addEventListener("click", clickEvent => {
 
         const noteText = document.querySelector("#noteText").value
         const criminalName = document.querySelector("#criminal").value
-
+        
+        
+        
         // Make a new object representation of a note
         const newNote = {
             noteText: noteText,
