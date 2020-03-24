@@ -12,6 +12,8 @@ import { useOfficers } from '../officers/OfficerProvider.js'
 
   const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
+let youCanSeeMe = true
+
 
 eventHub.addEventListener("crimeChosen", event => {
     // Filter the list of criminal who committed the crime
@@ -80,6 +82,17 @@ contentTarget.addEventListener("click", clickEvent => {
     }
     
 })
+
+
+eventHub.addEventListener("witnessButtonClick", customEvent => {
+    youCanSeeMe = !youCanSeeMe
+
+    youCanSeeMe
+        ? contentTarget.classList.remove("invisible")
+        : contentTarget.classList.add("invisible")
+})
+
+
 
   export const CriminalList = () => {
   const criminals = useCriminals()

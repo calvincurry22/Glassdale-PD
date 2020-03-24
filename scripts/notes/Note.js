@@ -6,6 +6,7 @@ export const Note = noteObject => {
             </header>
             <p>${noteObject.noteText}</p>
             <p>${new Date(noteObject.timestamp).toLocaleDateString()}</p>
+            
         </section>
     `
 }
