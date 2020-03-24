@@ -7,13 +7,22 @@ import { useCriminals, getCriminals } from "../criminals/CriminalDataProvider.js
 
 const contentTarget = document.querySelector(".notesContainer")
 const eventHub = document.querySelector(".container")
+let visibility = false
 
 // eventHub.addEventListener("noteStateChanged", customEvent => {
 //     NoteList()
 // })
 
 eventHub.addEventListener("allNotesClicked", customEvent => {
-    getNotes().then(NoteList)
+    visibility = !visibility
+
+    if (visibility) {
+        contentTarget.classList.remove("invisible")
+        getNotes().then(NoteList)
+    } else {
+        contentTarget.classList.add("invisible")
+    }
+    
 })
 
 
