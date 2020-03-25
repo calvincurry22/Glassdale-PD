@@ -23,16 +23,15 @@ contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
 
         const noteText = document.querySelector("#noteText").value
-        const criminalName = document.querySelector("#criminalSelect").value
-        const criminalsArray = useCriminals()
+        const criminalNumber = document.querySelector("#criminalSelect").value
+        // const criminalsArray = useCriminals()
         
-        const foundCriminal = criminalsArray.find(singleCriminal => singleCriminal.name === criminalName)
+        // const foundCriminal = criminalsArray.find(singleCriminal => singleCriminal.name === criminalName)
         // Make a new object representation of a note
         const newNote = {
             noteText: noteText,
-            criminal: criminalName,
             timestamp: Date.now(),
-            criminalId: foundCriminal.id
+            criminal: criminalNumber
         }
 
         // Change API state and application state
@@ -57,7 +56,7 @@ const render = () => {
         <option value="0">Select an criminal</option>
          ${criminalCollection.map(
             criminalObject => {
-                return `<option>${criminalObject.name}</option>`
+                return `<option value="${criminalObject.id}">${criminalObject.name}</option>`
             }  
          )}
     </select>

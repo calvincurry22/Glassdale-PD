@@ -29,7 +29,7 @@ eventHub.addEventListener("allNotesClicked", customEvent => {
 const createNote = (noteCollection, criminalCollection) => {
     contentTarget.innerHTML = noteCollection.map(note => {
         // Find the related criminal
-        const relatedCriminal = criminalCollection.find(criminal => criminal.id === note.criminalId)
+        const relatedCriminal = criminalCollection.find(criminalObject => criminalObject.id === parseInt(note.criminal))
 
         return `
             <section class="note">

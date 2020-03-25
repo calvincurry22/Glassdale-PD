@@ -1,18 +1,3 @@
 {
-  "notes": [
-    {
-      "noteText": "His twin brother, Mogelio, actually committed the crime.",
-      "criminal": "Rogelio Hills",
-      "timestamp": 1584472514668,
-      "id": 1,
-      "criminalId": 2
-    },
-    {
-      "noteText": "\"Started grand theft crimes after playing grand theft auto on ps4\"",
-      "criminal": "Madelyn Lebsack",
-      "timestamp": 1584995174072,
-      "criminalId": 1,
-      "id": 2
-    }
-  ]
+  "notes": []
 }
